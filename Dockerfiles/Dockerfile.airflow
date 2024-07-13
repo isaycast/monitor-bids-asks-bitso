@@ -1,0 +1,26 @@
+FROM apache/airflow:2.5.1
+USER root
+
+ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+ENV SPARK_HOME=/opt/spark
+ENV PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
+
+# Instala dependencias necesarias
+USER root
+RUN apt-get update && \
+    apt-get install -y openjdk-11-jdk wget && \
+    apt-get clean
+
+RUN wget https://dlcdn.apache.org/spark/spark-3.5.1/spark-3.5.1-bin-hadoop3.tgz && \
+    tar -xvf spark-3.5.1-bin-hadoop3.tgz -C /opt/ && \
+    mv /opt/spark-3.5.1-bin-hadoop3 /opt/spark && \
+    rm spark-3.5.1-bin-hadoop3.tgz
+
+ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-arm64
+ENV SPARK_HOME=/opt/spark
+ENV PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
+
+USER airflow
+
+RUN pip install apache-airflow-providers-apache-spark aiohttp aiosignal requests
+

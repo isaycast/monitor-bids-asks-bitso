@@ -1,0 +1,5 @@
+.env
+airflow/postgres-db-volume
+venv
+*.crc
+*.log
