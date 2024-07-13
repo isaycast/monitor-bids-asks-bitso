@@ -64,7 +64,8 @@ These two services run in the same container. Airflow is responsible for orchest
 
 
 The following image shows a diagram of the architecture:
-![diagrama bitsorepo](https://github.com/user-attachments/assets/1d284086-6b61-4b53-af17-b8db0c75f61d)
+![diagrama bitsorepo](https://github.com/user-attachments/assets/6bd8f546-9ed9-465b-a1d8-2871d3ec750b)
+
 
 
 
