@@ -91,9 +91,11 @@ services:
       - API_KEY=${API_KEY}
       - API_SECRET=${API_SECRET}
       - BASE_API_URL=${BASE_API_URL}
+      - WEBHOOK_URL=${WEBHOOK_URL}
       - http_method=${http_method}
       - request_path=${request_path}
       - requested_books=${requested_books}
+
     depends_on:
       - webhook
 

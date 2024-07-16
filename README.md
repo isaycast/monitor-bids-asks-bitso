@@ -92,6 +92,7 @@ Set the following environment variables for the project:
 API_KEY=<your_api_key>
 API_SECRET=<your_api_secret>
 BASE_API_URL=<your_base_api_url>
+WEBHOOK_URL=<your_webhook_url>
 HTTP_METHOD=<your_http_method>
 REQUEST_PATH=<your_request_path>
 REQUESTED_BOOKS=<your_requested_books> string separed by commas usd_mxn,btc_mxn
