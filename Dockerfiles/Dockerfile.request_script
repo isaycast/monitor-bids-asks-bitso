@@ -8,5 +8,4 @@ RUN pip install -r requirements.txt
 
 COPY src/request_book.py .
 
-# Especifica el comando a ejecutar al iniciar el contenedor
 CMD ["python", "request_book.py"]

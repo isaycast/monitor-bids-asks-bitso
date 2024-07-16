@@ -3,3 +3,4 @@ airflow/postgres-db-volume
 venv
 *.crc
 *.log
+airflow/logs

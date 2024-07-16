@@ -1,8 +1,10 @@
-import logging
-from flask import Flask, request
 import os 
+import json
+import logging
+from flask import Flask, request, Response
 import psycopg2
 from psycopg2.extras import execute_values
+
 
 app = Flask(__name__)
 logging.basicConfig(level=logging.DEBUG)
@@ -44,13 +46,13 @@ def webhook_recibe_data():
         logging.debug("Data inserted successfully into the database")
     except Exception as e:
         logging.error(f"Error inserting data into the database: {e}")
-        return "Error inserting data into the database", 500
+        return Response(json.dumps({"message":"error"}), mimetype='application/json',status=500)
     
     
     finally:
         cursor.close()
         conn.close()
-    return "Flask app is running"
+    return Response(json.dumps({"message":"Ok"}), mimetype='application/json')
 
 
 if __name__ == '__main__':
